@@ -18,6 +18,8 @@ def initParser():
                         type=argparse.FileType('r'), default='topo.json')
     parser.add_argument('--cli', help="enable mininet cli to debug",
                         action='store_true')
+    parser.add_argument('--notest', help="do not run interop tests",
+                        action='store_true')
     parser.add_argument('--verbosity', '-v', choices=list(LEVELS.keys()), default='output',
                         help='|'.join(LEVELS.keys()))
     return parser.parse_args()
@@ -71,11 +73,12 @@ def interopNet(topo):
 def interopTest(net):
     """Add test cases for interop
     """
+    import time
+    # Waiting for routing table converge
+    time.sleep(10)
     # Pingall non-controller hosts
     hosts = [h for h in net.hosts if not h.name.endswith('-c')]
     net.ping(hosts=hosts)
-    for sw in net.switches:
-        sw.printTableEntries()
 
 def main():
     args = initParser()
@@ -84,9 +87,15 @@ def main():
     lg.setLogLevel(args.verbosity)
     net = interopNet(topo)
     net.start()
+    for h in net.hosts:
+        if not h.name.endswith('-c'):
+            h.setDefaultRoute(h.params.get('defaultRoute'))
     if args.cli:
         CLI(net)
-    interopTest(net)
+    if not args.notest:
+        interopTest(net)
+    for sw in net.switches:
+        sw.printTableEntries()
 
     for sw in net.switches:
         # Assume everyone assigns the control-plane thread to a 'controller' attr

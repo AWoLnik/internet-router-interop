@@ -1,5 +1,6 @@
 P4APP=p4app/p4app
 INTEROP=interop.p4app
+CONFIG=topo.json
 
 all: run
 
@@ -10,4 +11,4 @@ prepare:
 	${P4APP} update
 
 run: prepare
-	${P4APP} run ${INTEROP}
+	${P4APP} run ${INTEROP} -t ${CONFIG}

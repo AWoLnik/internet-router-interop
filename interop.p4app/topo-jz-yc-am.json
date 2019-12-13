@@ -16,7 +16,7 @@
       "ctrl_args": {
         "ctrl_port": 1,
         "start_wait": 0.5,
-        "timeout": 20
+        "timeout": 1
       },
       "router_id": "10.0.0.1",
       "lsunit": 3,
@@ -36,7 +36,6 @@
       "class": "lukexuan.router.Router",
       "prog": "lukexuan/router.p4",
       "enable_ctrl": true,
-      "pcap_dump": "/tmp/p4app-logs",
       "ctrl_args": {
         "2": {
           "subnet": "10.0.1.0/24",
@@ -52,20 +51,39 @@
           "subnet": "10.0.3.0/24",
           "ipaddr": "10.0.3.1",
           "helloint": 1
+        },
+        "5": {
+          "subnet": "10.0.5.0/24",
+          "ipaddr": "10.0.5.1",
+          "helloint": 1
         }
+      }
+    },
+    "sw4": {
+      "class": "amudvari.maclearning.MacLearningSwitch",
+      "prog": "amudvari/l2switch.p4",
+      "enable_ctrl": true,
+      "ctrl_args": {
+        "hw": "10.0.4.101",
+        "cpw": "10.10.0.4",
+        "ctrl_port": 1,
+        "start_wait": 0.5
       }
     }
   },
   "hosts": {
     "h1": { "ip": "10.0.0.101/24", "defaultRoute": "dev eth0 via 10.0.0.1" },
     "h2": { "ip": "10.0.1.101/24", "defaultRoute": "dev eth0 via 10.0.1.1" },
-    "h3": { "ip": "10.0.2.101/24", "defaultRoute": "dev eth0 via 10.0.2.1" }
+    "h3": { "ip": "10.0.2.101/24", "defaultRoute": "dev eth0 via 10.0.2.1" },
+    "h4": { "ip": "10.0.4.101/24", "defaultRoute": "dev eth0 via 10.0.4.1" }
   },
   "links": [
     [ "h1", "sw1" ],
     [ "sw1", "sw2" ],
     [ "h2", "sw3" ],
     [ "h3", "sw3" ],
-    [ "sw2", "sw3" ]
+    [ "sw2", "sw3" ],
+    [ "h4", "sw4" ],
+    [ "sw4", "sw3" ]
   ]
 }
