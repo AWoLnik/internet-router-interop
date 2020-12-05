@@ -1,12 +1,9 @@
 [submodule "interop.p4app/example"]
 	path = interop.p4app/example
 	url = https://github.com/fno2010/maclearning.p4app
-[submodule "interop.p4app/jensen"]
-	path = interop.p4app/jensen
-	url = https://github.com/fno2010/pwospf-p4
-[submodule "interop.p4app/lukexuan"]
-	path = interop.p4app/lukexuan
-	url = https://github.com/LukeXuan/634-router.git
+[submodule "brandon-router.p4app"]
+	path = brandon-router.p4app
+	url = https://github.com/liubrandon/pwospf-p4-router.git
 [submodule "interop.p4app/evanblasy"]
 	path = interop.p4app/evanblasy
 	url = https://github.com/evanblasy/router-project.p4app
