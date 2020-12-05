@@ -7,3 +7,6 @@
 [submodule "interop.p4app/lukexuan"]
 	path = interop.p4app/lukexuan
 	url = https://github.com/LukeXuan/634-router.git
+[submodule "interop.p4app/evanblasy"]
+	path = interop.p4app/evanblasy
+	url = https://github.com/evanblasy/router-project.p4app
