@@ -10,6 +10,6 @@
 [submodule "interop.p4app/yupeng"]
 	path = interop.p4app/yupeng
 	url = https://github.com/charles-typ/yupeng-router.git
-[submodule "maclearning.p4app"]
-	path = maclearning.p4app
+[submodule "interop.p4app/willsussman"]
+	path = interop.p4app/willsussman
 	url = https://github.com/willsussman/maclearning.p4app.git
