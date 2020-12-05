@@ -10,3 +10,6 @@
 [submodule "interop.p4app/evanblasy"]
 	path = interop.p4app/evanblasy
 	url = https://github.com/evanblasy/router-project.p4app
+[submodule "interop.p4app/yupeng-router"]
+	path = interop.p4app/yupeng-router
+	url = https://github.com/charles-typ/yupeng-router.git
