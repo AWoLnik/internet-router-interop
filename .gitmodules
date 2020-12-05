@@ -10,6 +10,6 @@
 [submodule "interop.p4app/adamwolnikowski"]
 	path = interop.p4app/adamwolnikowski
 	url = https://github.com/AWoLnik/router
-[submodule "interop.p4app/yupeng-router"]
-	path = interop.p4app/yupeng-router
+[submodule "interop.p4app/yupeng"]
+	path = interop.p4app/yupeng
 	url = https://github.com/charles-typ/yupeng-router.git
