@@ -1,6 +1,3 @@
-[submodule "interop.p4app/example"]
-	path = interop.p4app/example
-	url = https://github.com/fno2010/maclearning.p4app
 [submodule "interop.p4app/evanblasy"]
 	path = interop.p4app/evanblasy
 	url = https://github.com/evanblasy/router-project.p4app
