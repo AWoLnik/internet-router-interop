@@ -10,3 +10,6 @@
 [submodule "brandon-router.p4app"]
 	path = brandon-router.p4app
 	url = https://github.com/liubrandon/pwospf-p4-router.git
+[submodule "interop.p4app/evanblasy"]
+	path = interop.p4app/evanblasy
+	url = https://github.com/evanblasy/router-project.p4app
