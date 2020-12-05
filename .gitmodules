@@ -13,6 +13,6 @@
 [submodule "interop.p4app/brandonliu"]
 	path = interop.p4app/brandonliu
 	url = https://github.com/liubrandon/pwospf-p4-router.git
-[submodule "eric"]
-	path = eric
+[submodule "interop.p4app/eric"]
+	path = interop.p4app/eric
 	url = https://github.com/RollingPeanuts/interop-router.git
