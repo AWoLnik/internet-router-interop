@@ -54,6 +54,20 @@
           "helloint": 1
         }
       }
+    },
+    "adam-switch": {
+      "class": "adamwolnikowski.controller.RouterController",
+      "prog": "adamwolnikowski/router.p4",
+      "enable_ctrl": true,
+      "pcap_dump": "/tmp/p4app-logs",
+      "ctrl_args": {
+        "2": {
+          "routerID": "10.0.0.1",
+          "MAC": "00:00:00:00:00:01",
+          "areaID": 1,
+          "helloint": 1
+        }
+      }
     }
   },
   "hosts": {
