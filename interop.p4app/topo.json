@@ -1,11 +1,28 @@
 {
   "switches": {
     "sw1": {
-      "class": "willsussman.maclearning.MacLearningSwitch",
-      "prog": "willsussman/l2switch.p4",
-      "enable_ctrl": true
+      "class": "evanblasy.router.PWOSPFRouter",
+      "prog": "evanblasy/switch.p4",
+      "enable_ctrl": true,
+      "ctrl_args": {
+        "start_wait": 0.5,
+        "router_id": "10.0.0.0",
+        "area_id": "192.168.0.0",
+        "mac": "10:00:00:00:00:00"
+      }
     },
     "sw2": {
+      "class": "evanblasy.router.PWOSPFRouter",
+      "prog": "evanblasy/switch.p4",
+      "enable_ctrl": true,
+      "ctrl_args": {
+        "start_wait": 0.5,
+        "router_id": "10.0.1.0",
+        "area_id": "192.168.0.0",
+        "mac": "20:00:00:00:00:00"
+      }
+    },
+    "sw3": {
       "class": "willsussman.maclearning.MacLearningSwitch",
       "prog": "willsussman/l2switch.p4",
       "enable_ctrl": true
