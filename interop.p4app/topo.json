@@ -1,9 +1,11 @@
 {
   "switches": {
-    "sw1": {
-      "class": "willsussman.maclearning.MacLearningSwitch",
-      "prog": "willsussman/l2switch.p4",
-      "enable_ctrl": true
+    "sw1": { 
+      "class": "brandonliu.router.PWOSPFRouter", 
+      "prog": "brandonliu/l2switch.p4", 
+      "enable_ctrl": true, 
+      "pcap_dump": "/tmp/p4app-logs", 
+      "ctrl_args": { "id": 0 } 
     },
     "sw2": {
       "class": "willsussman.maclearning.MacLearningSwitch",
