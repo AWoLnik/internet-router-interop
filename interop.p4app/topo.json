@@ -4,6 +4,11 @@
       "class": "willsussman.maclearning.MacLearningSwitch",
       "prog": "willsussman/l2switch.p4",
       "enable_ctrl": true
+    },
+    "sw2": {
+      "class": "willsussman.maclearning.MacLearningSwitch",
+      "prog": "willsussman/l2switch.p4",
+      "enable_ctrl": true
     }
   },
   "hosts": {
