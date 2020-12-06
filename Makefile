@@ -12,3 +12,6 @@ prepare:
 
 run: prepare
 	${P4APP} run ${INTEROP} -t ${CONFIG}
+
+clean:
+	find . -name "*.pyc" -exec rm -f {} \;
