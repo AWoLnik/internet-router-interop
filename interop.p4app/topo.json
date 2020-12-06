@@ -17,19 +17,11 @@
   },
   "hosts": {
     "h1": { "ip": "10.0.1.0", "defaultRoute": "dev eth0 via 10.0.1.0" },
-    "h2": { "ip": "10.0.2.0", "defaultRoute": "dev eth0 via 10.0.2.0" },
-    "h3": { "ip": "10.0.3.0", "defaultRoute": "dev eth0 via 10.0.3.0" },
-    "h4": { "ip": "10.0.4.0", "defaultRoute": "dev eth0 via 10.0.4.0" },
-    "h5": { "ip": "10.0.5.0", "defaultRoute": "dev eth0 via 10.0.5.0" },
-    "h6": { "ip": "10.0.6.0", "defaultRoute": "dev eth0 via 10.0.6.0" }
+    "h2": { "ip": "10.0.2.0", "defaultRoute": "dev eth0 via 10.0.2.0" }
   },
   "links": [
     [ "h1", "sw1"],
     [ "h2", "sw2"],
-    [ "h3", "sw3"],
-    [ "h4", "sw4"],
-    [ "h5", "sw5"],
-    [ "h6", "sw6"],
     [ "sw1", "sw2"]
   ]
 }
