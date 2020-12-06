@@ -78,6 +78,9 @@ def interopTest(net):
     time.sleep(10)
     # Pingall non-controller hosts
     hosts = [h for h in net.hosts if not h.name.endswith('-c')]
+    print("First Ping Set")
+    net.ping(hosts=hosts)
+    print("Second Ping Set")
     net.ping(hosts=hosts)
 
 def main():
