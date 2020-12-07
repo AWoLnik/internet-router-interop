@@ -27,7 +27,6 @@
     "h3": { "ip": "10.0.0.2", "defaultRoute": "dev eth0 via 10.0.0.2" },
     "h2": { "ip": "10.0.1.2", "defaultRoute": "dev eth0 via 10.0.1.2" },
     "h4": { "ip": "10.0.1.1", "defaultRoute": "dev eth0 via 10.0.1.1" }
-    
   },
   "links": [
     [ "h1", "sw1", {"port2": 2}],
