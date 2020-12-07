@@ -75,6 +75,10 @@ def interopTest(net):
     """
     import time
     # Waiting for routing table converge
+    # h2 = net.get("h2")
+    # h2.cmd("arping -c1 10.0.0.1")
+    # h1 = net.get("h1")
+    # h1.cmd("arping -c1 10.0.1.2")
     time.sleep(10)
     # Pingall non-controller hosts
     hosts = [h for h in net.hosts if not h.name.endswith('-c')]
