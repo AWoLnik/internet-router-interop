@@ -1,0 +1,44 @@
+{
+  "switches": {
+    "sw1": {
+      "class": "brandonliu.router.PWOSPFRouter",
+      "prog": "brandonliu/l2switch.p4",
+      "enable_ctrl": true,
+      "pcap_dump": "/tmp/p4app-logs",
+      "ctrl_args": {
+        "id": 0
+      }
+    },
+    "sw2": {
+      "class": "willsussman.maclearning.MacLearningSwitch",
+      "prog": "willsussman/l2switch.p4",
+      "enable_ctrl": true
+    },
+    "sw4": {
+        "class": "eric.myrouter.MyRouter",
+        "prog": "eric/l2switch.p4",
+        "enable_ctrl": true,
+        "ctrl_args": {
+            "areaId": 0,
+            "routerId": 4
+        }
+    }
+  },
+  "hosts": {
+    "h1": { "ip": "10.0.1.0", "defaultRoute": "dev eth0 via 10.0.1.0" },
+    "h2": { "ip": "10.0.2.0", "defaultRoute": "dev eth0 via 10.0.2.0" },
+    "h3": { "ip": "10.0.3.0", "defaultRoute": "dev eth0 via 10.0.3.0" },
+    "h4": { "ip": "10.0.4.1", "defaultRoute": "dev eth0 via 10.0.4.1" },
+    "h5": { "ip": "10.0.5.0", "defaultRoute": "dev eth0 via 10.0.5.0" },
+    "h6": { "ip": "10.0.6.0", "defaultRoute": "dev eth0 via 10.0.6.0" }
+  },
+  "links": [
+    [ "h1", "sw1"],
+    [ "h2", "sw2"],
+    [ "h3", "sw3"],
+    [ "h4", "sw4", {"port2": 4}],
+    [ "h5", "sw5"],
+    [ "h6", "sw6"],
+    [ "sw1", "sw2"]
+  ]
+}
