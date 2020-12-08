@@ -3,7 +3,7 @@
 	url = https://github.com/evanblasy/router-project.p4app
 [submodule "interop.p4app/adamwolnikowski"]
 	path = interop.p4app/adamwolnikowski
-	url = https://github.com/AWoLnik/router
+	url = https://github.com/AWoLnik/router.git
 [submodule "interop.p4app/yupeng"]
 	path = interop.p4app/yupeng
 	url = https://github.com/charles-typ/yupeng-router.git
