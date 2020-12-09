@@ -20,20 +20,36 @@
         "area_id": "192.168.0.0",
         "mac": "10:00:00:00:00:00"
       }
+    },
+    "sw3": {
+      "class": "adamwolnikowski.router.PWOSPFRouter",
+      "prog": "adamwolnikowski/router.p4",
+      "enable_ctrl": true,
+      "pcap_dump": "/tmp/p4app-logs",
+      "ctrl_args": {
+        "routerID": "10.0.2.0",
+        "MAC": "20:00:00:00:00:00",
+        "areaID": "192.168.0.0"
+      }
     }
   },
   "hosts": {
     "h1": { "ip": "10.0.0.1", "defaultRoute": "dev eth0 via 10.0.0.1" },
     "h3": { "ip": "10.0.0.2", "defaultRoute": "dev eth0 via 10.0.0.2" },
     "h2": { "ip": "10.0.1.2", "defaultRoute": "dev eth0 via 10.0.1.2" },
-    "h4": { "ip": "10.0.1.1", "defaultRoute": "dev eth0 via 10.0.1.1" }
+    "h4": { "ip": "10.0.1.1", "defaultRoute": "dev eth0 via 10.0.1.1" },
+    "h5": { "ip": "10.0.2.10", "defaultRoute": "dev eth0 via 10.0.2.10" },
+    "h6": { "ip": "10.0.2.11", "defaultRoute": "dev eth0 via 10.0.2.11" }
   },
   "links": [
     [ "h1", "sw1", {"port2": 2}],
     [ "h3", "sw1", {"port2": 6}],
-    
     [ "h2", "sw2", {"port2": 3}],
     [ "h4", "sw2", {"port2": 7}],
-    [ "sw1", "sw2", {"port1": 4, "port2": 5}]
+    [ "h5", "sw3", {"port2": 2}],
+    [ "h6", "sw3", {"port2": 3}],
+    [ "sw1", "sw2", {"port1": 4, "port2": 5}],
+    [ "sw3", "sw1", {"port1": 4, "port2": 8}],
+    [ "sw3", "sw2", {"port1": 5, "port2": 9}]
   ]
 }
