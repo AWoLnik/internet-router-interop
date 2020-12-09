@@ -1,20 +1,11 @@
 {
   "switches": {
     "sw1": {
-      "class": "brandonliu.router.PWOSPFRouter",
-      "prog": "brandonliu/l2switch.p4",
-      "enable_ctrl": true,
-      "pcap_dump": "/tmp/p4app-logs",
-      "ctrl_args": {
-        "id": 0
-      }
-    },
-    "sw2": {
       "class": "willsussman.maclearning.MacLearningSwitch",
       "prog": "willsussman/l2switch.p4",
       "enable_ctrl": true
     },
-    "sw4": {
+    "sw2": {
         "class": "eric.myrouter.MyRouter",
         "prog": "eric/l2switch.p4",
         "enable_ctrl": true,
@@ -22,6 +13,38 @@
             "areaId": 0,
             "routerId": 4
         }
+    },
+    "sw3": {
+      "class": "brandonliu.router.PWOSPFRouter",
+      "prog": "brandonliu/l2switch.p4",
+      "enable_ctrl": true,
+      "pcap_dump": "/tmp/p4app-logs",
+      "ctrl_args": {
+          "id": 0
+      }
+    },
+    "sw4": {
+      "class": "evanblasy.router.PWOSPFRouter",
+      "prog": "evanblasy/switch.p4",
+      "enable_ctrl": true,
+      "pcap_dump": "/tmp/p4app-logs",
+      "ctrl_args": {
+        "start_wait": 0.5,
+        "router_id": "10.0.1.0",
+        "area_id": "192.168.0.0",
+        "mac": "10:00:00:00:00:00"
+      }
+    },
+    "sw5": {
+      "class": "adamwolnikowski.router.PWOSPFRouter",
+      "prog": "adamwolnikowski/router.p4",
+      "enable_ctrl": true,
+      "pcap_dump": "/tmp/p4app-logs",
+      "ctrl_args": {
+        "routerID": "10.0.2.0",
+        "MAC": "20:00:00:00:00:00",
+        "areaID": "192.168.0.0"
+      }
     }
   },
   "hosts": {
